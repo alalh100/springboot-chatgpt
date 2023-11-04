@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * call example:
+ * http://localhost:8080/bot/chat?prompt=what is the meaning of infinity
+ */
 @RestController
 @RequestMapping("/bot")
 public class CustomBotController {
@@ -22,6 +26,7 @@ public class CustomBotController {
 
     @Autowired
     private RestTemplate template;
+
 
     @GetMapping("/chat")
     public String chat(@RequestParam("prompt") String prompt){
